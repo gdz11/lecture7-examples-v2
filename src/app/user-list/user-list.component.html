@@ -1,0 +1,18 @@
+<h1>User list simple</h1>
+<div *ngIf="isUserLoading" class="loading">Loading...</div>
+<div *ngIf="isUserLoadingFailed">Error loading data</div>
+<div *ngIf="!isUserLoading && !isUserLoadingFailed" class="user-list">
+    <div *ngFor="let user of users" [ngClass]="{ 'user-list__row--selected': user.id == selectedUserId}" (click)="onSelectUser(user.id)" class="user-list__row">
+        <div class="user-list__cell">{{ user.name }}</div>
+        <div class="user-list__cell">{{ user.email}}</div>
+    </div>
+</div>
+
+<button (click)="onReload()">Reload</button>
+
+
+<ol>
+    <li *ngFor="let todo of todos">
+        {{ todo.title}} ({{ todo.completed ? '+' : '*'}})
+    </li>
+</ol>

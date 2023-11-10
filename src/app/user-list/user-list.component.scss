@@ -1,0 +1,36 @@
+
+.user-list{
+    display: table;
+
+    &__row{
+        display: table-row;
+        cursor: pointer;
+
+        &:hover:not(&--selected){
+            background-color: paleturquoise;
+        }
+        &--selected{
+            background-color: aquamarine;
+        }
+    }
+
+    &__cell {
+        display: table-cell;
+        padding: 5px;
+        border: solid 1px black;
+    }
+}
+
+.todo-list{
+    display: table;
+
+    &__row{
+        display: table-row;
+    }
+
+    &__cell {
+        display: table-cell;
+        padding: 5px;
+        border: solid 1px black;
+    }
+}
