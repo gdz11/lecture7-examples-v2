@@ -1,16 +1,18 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from '../shared/models/user';
+import { Todo } from '../shared/models/todo';
 import { UserService } from '../shared/services/user.service';
 import { TodoService } from '../shared/services/todo.service';
-import { Todo } from '../shared/models/todo';
+import { NgClass } from '@angular/common';
 
 @Component({
   selector: 'app-user-list',
+  standalone: true,
+  imports: [NgClass],
   templateUrl: './user-list.component.html',
-  styleUrls: ['./user-list.component.scss']
+  styleUrl: './user-list.component.scss'
 })
 export class UserListComponent implements OnInit {
-  
   users: User[];
   todos: Todo[];
   isUserLoading: boolean;
